@@ -5,6 +5,16 @@
 	<title>新幹線ちゃん</title>
 	<script>document.write('<script src="http://' + document.domain + ':8000/socket.io/socket.io.js"><\/script>');</script>
 	<script src="src/main.js"></script>
+	<!-- Live2D -->
+	<script src="src/live2d.min.js"></script>
+	<script src="src/Live2DFramework.js"></script>
+	<script src="src/Live2D/utils/MatrixStack.js"></script>
+    <script src="src/Live2D/utils/ModelSettingJson.js"></script>
+    <script src="src/Live2D/PlatformManager.js"></script>
+    <script src="src/Live2D/LAppDefine.js"></script>
+    <script src="src/Live2D/LAppModel.js"></script>
+    <script src="src/Live2D/LAppLive2DManager.js"></script>
+    <script src="src/Live2D/SampleApp1.js"></script>
 </head>
 <body>
 	<h1>新幹線ちゃん</h1>
@@ -13,5 +23,10 @@
 		<input type="submit" value="話しかける">
 	</form>
 	<div id="tweetArea"></div>
+	<p><button id="btnChange" class="active">Change Model</button></p>
+	<div>
+		<canvas id="glcanvas" width="680" height="940"></canvas>
+	</div>
+	<!--<div id="myconsole" style="color:#000">---- Log ----</div>-->
 </body>
 </html>
