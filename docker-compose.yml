@@ -6,7 +6,7 @@ web:
         - ./htdocs:/usr/local/apache2/htdocs
 
 node:
-    image: node
+    build: Images/node
     ports:
         - 8000:8000
     volumes:
