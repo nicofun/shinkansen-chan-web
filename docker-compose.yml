@@ -13,4 +13,4 @@ node:
         - ./node:/mnt
     working_dir: /mnt
     tty: true
-    #command: node server.js
+    #command: coffee server.coffee
