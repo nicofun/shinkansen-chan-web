@@ -1,0 +1,16 @@
+web:
+    image: httpd
+    ports:
+        - 80:8080
+    volumes:
+        - ./htdocs:/usr/local/apache2/htdocs
+
+node:
+    image: node
+    ports:
+        - 8000:8000
+    volumes:
+        - ./node:/mnt
+    working_dir: /mnt
+    tty: true
+    #command: node server.js
