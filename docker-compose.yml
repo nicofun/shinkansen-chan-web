@@ -1,7 +1,7 @@
 web:
     image: httpd
     ports:
-        - 80:8080
+        - 80:80
     volumes:
         - ./htdocs:/usr/local/apache2/htdocs
 
