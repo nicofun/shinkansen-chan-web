@@ -19,6 +19,8 @@ io.sockets.on "connection", (socket) ->
 		console.log "message: " + message
 		if message.match(/周辺のホテル/)
 			searchHotel(latitude, longitude)
+		else if message.match(/新函館北斗駅(.*)出発/)
+			searchDia()
 		else
 			data =
 				'utt': message
@@ -41,5 +43,17 @@ searchHotel = (lat, lng) ->
 	request options, (error, response, body) ->
 		json = JSON.parse(body)
 		hotelname = json[0].hotelname
-		msg = "#{hotelname}が近くにあります"
+		distance = json[0].distance
+		msg = "#{hotelname}が#{distance}m先にあります"
+		io.sockets.emit "chat", {value: msg}
+
+searchDia = ->
+	diaUrl = "http://139.59.224.35:5000/api/v1/dia"
+	options =
+		uri: diaUrl,
+		method: 'GET',
+		headers: headers
+	request options, (error, response, body) ->
+		time = body
+		msg = "#{time}です"
 		io.sockets.emit "chat", {value: msg}
