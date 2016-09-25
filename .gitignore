@@ -1,9 +1,9 @@
 node_modules/
 /node/config/default.json
 
-/htdocs/assets/image/*
-/htdocs/assets/live2d/*
-!/htdocs/assets/live2d/shinkansen-chan/
+#/htdocs/assets/image/*
+#/htdocs/assets/live2d/*
+#!/htdocs/assets/live2d/shinkansen-chan/
 
 /htdocs/src/live2d.min.js
 /htdocs/src/Live2DFramework.js
