@@ -1,8 +1,0 @@
-{
-	"type": "Live2D Model Setting",
-	"name": "shinkan-chan",
-	"model": "shinkan-chan.moc",
-	"textures": [
-		"shinkan-chan.2048/texture_00.png"
-	]
-}

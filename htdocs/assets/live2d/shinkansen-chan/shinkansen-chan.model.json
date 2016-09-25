@@ -1,0 +1,8 @@
+{
+	"type": "Live2D Model Setting",
+	"name": "shinkansen-chan",
+	"model": "shinkansen-chan.moc",
+	"textures": [
+		"shinkansen-chan.2048/texture_00.png"
+	]
+}
