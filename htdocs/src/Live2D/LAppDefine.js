@@ -35,7 +35,8 @@ var LAppDefine = {
     MODEL_HARU_B : "assets/live2d/haru/haru_02.model.json",
     MODEL_SHIZUKU : "assets/live2d/shizuku/shizuku.model.json",
     MODEL_WANKO : "assets/live2d/wanko/wanko.model.json",
-    MODEL_EPSILON : "assets/live2d/Epsilon2.1/Epsilon2.1.model.json",
+    //MODEL_EPSILON : "assets/live2d/Epsilon2.1/Epsilon2.1.model.json",
+	MODEL_EPSILON : "assets/live2d/shinkansen-chan/shinkan-chan.model.json",
 
     // 外部定義ファイル(json)と合わせる
     MOTION_GROUP_IDLE : "idle", // アイドリング
