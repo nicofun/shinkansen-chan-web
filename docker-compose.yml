@@ -13,4 +13,4 @@ node:
         - ./node:/mnt
     working_dir: /mnt
     tty: true
-    command: coffee server.coffee
+    #command: coffee server.coffee
