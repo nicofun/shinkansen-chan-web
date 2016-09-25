@@ -5,30 +5,31 @@ if (!'SpeechSynthesisUtterance' in window) {
 }
 
 window.onload = function() {
+	document.getElementById('glcanvas').setAttribute("width", window.innerWidth - 16);
+	document.getElementById('glcanvas').setAttribute("height", window.innerHeight - 16);
 	sampleApp1();
 	socketio = io.connect(document.domain + ":8000");
 	socketio.on("chat", function(data) { addTweet(data.value); });
 };
 
+
 var speecher = new webkitSpeechRecognition();
-function speech() {
-	speecher.lang = "ja";
-	speecher.start();
-}
-speecher.addEventListener('result', function(e) {
-	var text = e.results[0][0].transcript;
-	console.log(text);
-	socketio.emit("chat", {value: text});
-});
-
-
 function tweet() {
 	var tweetMsg = document.getElementById('tweetMsg');
 	if(tweetMsg.value !== "") {
 		socketio.emit("chat", {value: tweetMsg.value});
 		tweetMsg.value = "";
+	} else {
+		speecher.lang = "ja";
+		speecher.start();
 	}
 }
+
+speecher.addEventListener('result', function(e) {
+	var text = e.results[0][0].transcript;
+	console.log(text);
+	socketio.emit("chat", {value: text});
+});
 
 function addTweet(chat) {
 	if(speechFlag) {
