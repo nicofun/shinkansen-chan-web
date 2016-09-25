@@ -41,4 +41,5 @@ searchHotel = (lat, lng) ->
 	request options, (error, response, body) ->
 		json = JSON.parse(body)
 		hotelname = json[0].hotelname
-		io.sockets.emit "chat", {value: hotelname}
+		msg = "#{hotelname}が近くにあります"
+		io.sockets.emit "chat", {value: msg}
