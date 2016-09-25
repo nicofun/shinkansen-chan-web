@@ -5,12 +5,25 @@ if (!'SpeechSynthesisUtterance' in window) {
 }
 
 window.onload = function() {
-	//document.getElementById('glcanvas').setAttribute("width", window.innerWidth - 16);
-	//document.getElementById('glcanvas').setAttribute("height", window.innerHeight - 16);
+	resizer();
 	sampleApp1();
 	socketio = io.connect(document.domain + ":8000");
 	socketio.on("chat", function(data) { addTweet(data.value); });
 };
+
+window.addEventListener("resize", function() {
+	resizer();
+});
+
+function resizer() {
+	if(window.innerWidth < 500) {
+		document.getElementById('glcanvas').setAttribute("width", window.innerWidth - 16);
+		document.getElementById('glcanvas').setAttribute("height", 300);
+	} else {
+		document.getElementById('glcanvas').setAttribute("width", 680);
+		document.getElementById('glcanvas').setAttribute("height", 940);
+	}
+}
 
 
 var speecher = new webkitSpeechRecognition();
