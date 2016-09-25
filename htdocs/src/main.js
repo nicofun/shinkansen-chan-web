@@ -83,7 +83,8 @@ function addTweet(chat) {
     	msg.volume = 1;
     	msg.rate = 1;
     	msg.pitch = 2;
-    	msg.text = chat; // しゃべる内容
+		var regex = /<(.|\n)*?>/ig;
+		msg.text = chat.replace(regex, "");
     	msg.lang = 'ja-JP'; // en-US or ja-UP
 		speechSynthesis.speak(msg);
 	}

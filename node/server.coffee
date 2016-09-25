@@ -43,8 +43,9 @@ searchHotel = (lat, lng) ->
 	request options, (error, response, body) ->
 		json = JSON.parse(body)
 		hotelname = json[0].hotelname
+		hotelUrl = json[0].hoteldetailurl
 		distance = json[0].distance
-		msg = "#{hotelname}が#{distance}m先にあります"
+		msg = "<a href='#{hotelUrl}' target='_blank'>#{hotelname}</a>が#{distance}m先にあります"
 		io.sockets.emit "chat", {value: msg}
 
 searchDia = ->
